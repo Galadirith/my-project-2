@@ -73,6 +73,15 @@
         </script>
       </section>
       -->
+      <section data-markdown>
+        <script type="text/template">
+        ## Follow along at [goo.gl/bAUjTS](goo.gl/bAUjTS)
+
+        You will need
+        - [**Git**](https://git-scm.com/downloads) (https://git-scm.com/downloads)
+        - [**GitHub**](https://github.com/) (https://github.com/)
+        </script>
+      </section>
       <section
         data-markdown
         data-background-video="./vid/clip-2.mp4"
@@ -469,6 +478,30 @@
             <!-- .element: class="ref" -->
           </script>
         </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Creating a branch in your repository
+
+            ```
+            ~/my-project$ git branch my-new-branch
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            ~/my-project$ git checkout my-new-branch
+            Switched to branch 'my-new-branch'
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+
+            ```
+            ~/my-project$ git status
+            On branch my-new-branch
+            nothing to commit, working directory clean
+            ```
+            <!-- .element: class="fragment" data-fragment-index="3" -->
+
+          </script>
+        </section>
       </section>
       <section>
         <section data-markdown>
@@ -482,7 +515,37 @@
           <script type="text/template">
             ## Merging a branch in your repository
 
-            Several logbooks for the same project
+            ```
+            ~/my-project$ git status
+            On branch my-new-branch
+            nothing to commit, working directory clean
+            ```
+
+            ![](./img/08-1.svg) <!-- .element: class="medium" -->
+
+            [Atlassian - Git Branch](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
+            <!-- .element: class="ref" -->
+
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Merging a branch in your repository
+
+            ```
+            ~/my-project$ git checkout master
+            On branch master
+            nothing to commit, working directory clean
+            ```
+
+            ```
+            ~/my-project$ git merge my-new-branch
+            ```
+
+            ![](./img/08-2.svg) <!-- .element: class="medium" -->
+
+            [Atlassian - Git Branch](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
+            <!-- .element: class="ref" -->
           </script>
         </section>
       </section>
