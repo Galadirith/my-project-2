@@ -1,0 +1,557 @@
+<html>
+<head>
+  <!-- For reveal.js core css -->
+  <link rel="stylesheet" href="../css/reveal.css">
+
+  <!-- For reveal.js theme -->
+  <link rel="stylesheet" href="../css/theme/white.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../lib/css/github.css">
+
+  <!-- Thin custom styles -->
+  <style media="screen">
+    h1.light-shadow, h2.light-shadow, h3.light-shadow, .light-shadow{
+      color: rgba(255, 255, 255, 1.0);
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3), 0 0 1px rgba(0,0,0,0.04);
+    }
+    .reveal .slide-background video {
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      /*transform: translate(-50%, -50%);*/
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1000;
+      overflow: hidden;
+    }
+    strong.head-quote {
+      font-size: 1.5em;
+    }
+    em.head-quotee {
+      font-size: 0.8em;
+    }
+    .reveal section pre {
+      background: #f8f8f8;
+      padding: 10px 10px;
+      margin: 2em 0;
+      overflow: hidden;
+    }
+    section pre::first-line {
+      font-weight: bold;
+      color: #2a76dd;
+    }
+    section pre.commit::first-line {
+      font-weight: normal;
+      font-style: italic;
+      /*color: inherit;*/
+    }
+    .reveal section img {
+      border:0;
+      background: none;
+      box-shadow: none;
+    }
+    img.medium {
+      width: 50%;
+    }
+    img.large {
+      width: 75%;
+    }
+    a.ref {
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+      <section data-markdown>
+        <script type="text/template">
+        </script>
+      </section>
+      -->
+      <section
+        data-markdown
+        data-background-video="./vid/clip-2.mp4"
+        data-background-video-loop>
+        <script type="text/template">
+        # Version control with Git <!-- .element: class="light-shadow" -->
+        <br>
+        <br>
+        **"I Love Magic"** <!-- .element: class="light-shadow head-quote" -->
+        <br>
+        *- Harry Potter talking about Git* <!-- .element: class="light-shadow head-quotee" -->
+        <aside class="notes" data-markdown>
+          # Test notes
+          - Test
+        </aside>
+        </script>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Fundementals of Version control
+            What is version control?
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## What is version control?
+            - Tracks changes to files
+            - Facilitates sharing code with others
+            <aside class="notes" data-markdown>
+            Version control or a version control system are types of software that
+            help you keep track of documents over time, keeping track of every
+            modification. If you want to know what changes you made a year ago,
+            you can simply look back at in the history. If you make mistakes its
+            easy to go back to an earlier version.
+            <br><br>
+            Version control systems are designed to allow you to send your history
+            to other places or grab history from other places so that you can
+            share code with others.
+            </aside>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## What is version control?
+            ![](./img/screen-1.png)
+            <aside class="notes">
+            Before I learn't about version control I was doing stuff like this,
+            perhaps your the same. All I wanted was a simple way to make it
+            easier for me to keep previous versions of files. In the end I got
+            that an so much more :D
+            </aside>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Some Git terminology
+            - **Repository** (or *repo* if you want to sound kl ;D)
+            - **Working copy** (I'm not aware of any slang term for this)
+
+            ![](./img/screen-2.png) <!-- .element: class="large" -->
+            <aside class="notes">
+            We'll focus on Git.
+
+            You're repository is where all of your history is stored. Now later
+            on we'll see how to create a repo. The `.git` folder you see here
+            is your repo, and it keeps track of all the files next to it that
+            you can see and this is called your working copy.
+
+            Often you'll abuse this terminology and just call everything
+            together your repository, so in this case I might just call my
+            folder `my-project-2` my repository.
+            </aside>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Some Git terminology
+            - **Commits/Commit log**
+
+            ![](./img/01.svg) <!-- .element: class="medium" -->
+
+            [Atlassian - Git Branch](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
+            <!-- .element: class="ref" -->
+            <aside class="notes">
+            Its all about snapshots.
+            </aside>
+          </script>
+        </section>
+      </section>
+      <section>
+        <section
+          data-markdown
+          data-background-video="./vid/clip-3.mp4"
+          data-background-video-muted
+          data-background-video-loop>
+          <script type="text/template">
+            ## Are VCS useful for research? <!-- .element: class="light-shadow" -->
+            <br>
+            <br>
+            **"Yes!"** <!-- .element: class="light-shadow head-quote" -->
+            <br>
+            *- Hagrid loves VCS :D* <!-- .element: class="light-shadow head-quotee" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## (My ;D) Top reasons for using VCS for research
+
+            - <!-- .element: class="fragment" data-fragment-index="1" -->
+              **A simple record of everything you've done**
+            - <!-- .element: class="fragment" data-fragment-index="2" -->
+              **Effective backup solution**
+            - <!-- .element: class="fragment" data-fragment-index="3" -->
+              **Easily code with others**
+            - <!-- .element: class="fragment" data-fragment-index="4" -->
+              ***All* software uses VCS**
+              - Python; Numpy, Matplotlib ...
+              - C++; Boost, FFTW ...
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Creating a repository
+
+            Starting your logbook
+            <aside class="notes">
+
+            </aside>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ### Initializing a repository
+
+            ```
+            ~$ cd my-project/
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            ~/my-project$ git init
+            Initialized empty Git repository in /Users/edward/my-project/.git/
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+
+            ```
+            ~/my-project$ git status
+            On branch master
+
+            Initial commit
+
+            nothing to commit (create/copy files and use "git add" to track)
+            ```
+            <!-- .element: class="fragment" data-fragment-index="3" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ### Cloning a repository
+
+            ```nginx
+            ~$ git clone https://github.com/numpy/numpy.git
+            Cloning into 'numpy'...
+            remote: Counting objects: 112271, done.
+            remote: Compressing objects: 100% (19/19), done.
+            remote: Total 112271 (delta 6), reused 0 (delta 0), pack-reused 112252
+            Receiving objects: 100% (112271/112271), 44.48 MiB | 977.00 KiB/s, done.
+            Resolving deltas: 100% (88644/88644), done.
+            Checking connectivity... done.
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```nginx
+            ~$ cd numpy
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+
+            ```nginx
+            ~/numpy$ git status
+            On branch master
+            Your branch is up-to-date with 'origin/master'.
+            nothing to commit, working directory clean
+            ```
+            <!-- .element: class="fragment" data-fragment-index="3" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Adding files to your repository
+
+            Deciding what to put in your logbook
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Adding files to your repository
+
+            ![](./img/screen-3.png)
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Adding files to your repository
+
+            ```
+            ~/my-project$ git add file1 file2
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            ~/my-project$ git add ./*
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+
+            ```
+            ~/my-project$ git status
+            On branch master
+
+            Initial commit
+
+            Changes to be committed:
+              (use "git rm --cached <file>..." to unstage)
+
+            	new file:   file1
+            	new file:   file2
+            ```
+            <!-- .element: class="fragment" data-fragment-index="3" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Committing changes to your repository
+
+            Adding an entry to your logbook
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Committing changes to your repository
+
+            ```
+            ~/my-project$ git commit
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            Type you're log message here
+
+            # Please enter the commit message for your changes. Lines starting
+            # with '#' will be ignored, and an empty message aborts the commit.
+            # On branch master
+            #
+            # Initial commit
+            #
+            # Changes to be committed:
+            #	new file:   file1
+            #	new file:   file2
+            ```
+            <!-- .element: class="fragment commit" data-fragment-index="2" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Committing changes to your repository
+
+            ![](./img/index1@2x.png)
+
+            [Git - Staging Area](https://git-scm.com/about/staging-area)
+            <!-- .element: class="ref" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Checking the log of your repository
+
+            Looking at entries to your logbook
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Checking the log of your repository
+
+            ```
+            ~/my-project$ git log
+
+            commit 6dc369da24ee8560857f307d82097f38804fb2e4
+            Author: Edward Fauchon-Jones <edward.fauchon.jones@gmail.com>
+            Date:   Mon May 30 22:36:30 2016 +0100
+
+            Add file1 and file2 to the repository
+            ```
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown
+          data-background-video="./vid/clip-5.mp4"
+          data-background-video-muted
+          data-background-video-loop>
+          <script type="text/template">
+            ## Congratulations you've got a record :D <!-- .element: class="light-shadow" -->
+
+            *A simple record of everything you've done <span style="color:green;">&#10004;</span>*
+            <!-- .element: class="light-shadow head-quote" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Interacting with remote repositories
+
+            Copying logbooks
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Adding a link to a remote repository
+
+            ```
+            ~/my-project$ git remote add origin https://github.com/Galadirith/my-project.git
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            ~/my-project$ git remote show origin
+            * remote origin
+              Fetch URL: git@github.com:numpy/numpy.git
+              Push  URL: git@github.com:numpy/numpy.git
+              HEAD branch: master
+              Remote branches:
+                master              tracked
+              Local branch configured for 'git pull':
+                master merges with remote master
+              Local ref configured for 'git push':
+                master pushes to master (local out of date)
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Syncing commits with a remote repository
+
+            ```
+            ~/my-project$ git push origin master
+            ```
+            <!-- .element: class="fragment" data-fragment-index="1" -->
+
+            ```
+            ~/my-project$ git pull master
+            ```
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown
+          data-background-video="./vid/clip-5.mp4"
+          data-background-video-muted
+          data-background-video-loop>
+          <script type="text/template">
+            ## Congratulations you've backed up :D <!-- .element: class="light-shadow" -->
+
+            *Effective backup solution <span style="color:green;">&#10004;</span>*
+            <!-- .element: class="light-shadow head-quote" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Creating a branch in your repository
+
+            Several logbooks for the same project
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Creating a branch in your repository
+
+            ![](./img/01.svg) <!-- .element: class="medium" -->
+
+            [Atlassian - Git Branch](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
+            <!-- .element: class="ref" -->
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Merging a branch in your repository
+
+            Several logbooks for the same project
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Merging a branch in your repository
+
+            Several logbooks for the same project
+          </script>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Github Demo
+          </script>
+        </section>
+      </section>
+
+      <!-- <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Top five Git tips
+
+            Several logbooks for the same project
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## My Git setup
+
+            Several logbooks for the same project
+          </script>
+        </section>
+      </section> -->
+
+      <!-- <section>
+        <section data-markdown>
+          <script type="text/template">
+            ## My Git setup
+
+            Several logbooks for the same project
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Top five Git tips
+
+            Several logbooks for the same project
+          </script>
+        </section>
+      </section> -->
+    </div>
+  </div>
+  <script src="../js/reveal.js"></script>
+  <script src="../lib/js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      // showNotes: true,
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        // { src: '../plugin/highlight/highlight.9.4.0/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Speaker notes
+        { src: '../plugin/notes/notes.js' }
+      ]
+    });
+  </script>
+</body>
+</html>
