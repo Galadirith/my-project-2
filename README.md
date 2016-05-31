@@ -2,7 +2,7 @@
 
 <center>![dadl](https://raw.githubusercontent.com/Galadirith/dadownloader/master/imgs/dadownloader-shadow.png)</center>
 
-A simple python program to help you download your favourite deviations from
+A simple python program to help you download your favourite deviations at
 [DeviantArt](http://www.deviantart.com).
 
 ## Installation
